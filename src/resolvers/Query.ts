@@ -1,7 +1,5 @@
-import { categories, products } from './mockData.js'
-
 const Query = {
-  products: (obj, args) => {
+  products: (obj, args, { products }) => {
     if (Object.entries(args.productFilters).length == 0) {
       return products
     }
@@ -14,7 +12,7 @@ const Query = {
       }
     })
   },
-  categories: () => categories
+  categories: (obj, args, { categories }) => categories
 }
 
 export default Query

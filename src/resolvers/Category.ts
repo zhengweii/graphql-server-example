@@ -1,7 +1,5 @@
-import { products } from './mockData.js'
-
 const Category = {
-  products: (obj, args, context) => {
+  products: (obj, args, { products }) => {
     const res = []
     products.forEach((product) => {
       if (product.categoryId == obj.id) {

@@ -1,7 +1,5 @@
-import { categories } from './mockData.js'
-
 const Product = {
-  category: (obj) => {
+  category: (obj, args, { categories }) => {
     return categories.find((category) => category.id == obj.categoryId)
   }
 }
