@@ -1,13 +1,12 @@
 const Category = {
   products: (obj, args, { products }) => {
-    const res = []
-    products.forEach((product) => {
-      if (product.categoryId == obj.id) {
-        res.push(product)
-      }
-    })
+    if (!args.productFilters) {
+      return products.filter((product) => product.categoryId === obj.id)
+    }
 
-    return res
+    const { onSale } = args.productFilters
+    const filteredProducts = products.filter((product) => product.onSale === onSale)
+    return filteredProducts.filter((product) => product.categoryId === obj.id)
   }
 }
 

@@ -4,7 +4,7 @@ import { startStandaloneServer } from '@apollo/server/standalone'
 // File extension needs to be .js for compilation to work
 import resolvers from './resolvers/index.js'
 import typeDefs from './type-definitions/index.js'
-import { categories, products } from './mockData.js'
+import { categories, products, reviews } from './mockData.js'
 
 const server = new ApolloServer({
   typeDefs,
@@ -15,7 +15,8 @@ const { url } = await startStandaloneServer(server, {
   listen: { port: 4000 },
   context: async () => ({
     categories,
-    products
+    products,
+    reviews
   })
 })
 

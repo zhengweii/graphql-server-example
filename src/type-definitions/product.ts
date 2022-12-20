@@ -1,7 +1,7 @@
 const productTypeDefs = `#graphql
   input productFilters {
-    name: String
-    price: Float
+    onSale: Boolean
+    averageRatings: Int
   }
 
   type Product {
@@ -14,6 +14,7 @@ const productTypeDefs = `#graphql
     onSale: Boolean!
     categoryId: ID!
     category: Category!
+    reviews: [Review!]
   }
 `
 
