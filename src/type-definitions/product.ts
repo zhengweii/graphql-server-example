@@ -22,8 +22,8 @@ const productTypeDefs = `#graphql
     price: Float!
     image: String!
     onSale: Boolean!
-    categoryId: ID!
-    category: Category!
+    categoryId: ID
+    category: Category
     reviews: [Review!]
   }
 `

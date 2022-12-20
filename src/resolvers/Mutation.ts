@@ -44,6 +44,21 @@ const Mutation = {
 
     reviews.push(newReview)
     return newReview
+  },
+  deleteCategory: (obj, { id }, { categories, products }) => {
+    const index = categories.findIndex((each) => each.id === id)
+    if (index !== -1) {
+      categories.splice(index, 1)
+    }
+
+    // Delete the categoryId from associated products
+    products.forEach((product) => {
+      if (product.categoryId === id) {
+        product.categoryId = null
+      }
+    })
+
+    return id
   }
 }
 
