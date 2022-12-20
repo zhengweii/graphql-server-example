@@ -30,7 +30,8 @@ const Query = {
 
     return filteredProducts
   },
-  categories: (obj, args, { categories }) => categories
+  categories: (obj, args, { categories }) => categories,
+  reviews: (obj, args, { reviews }) => reviews
 }
 
 export default Query

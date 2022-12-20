@@ -4,6 +4,16 @@ const productTypeDefs = `#graphql
     averageRatings: Int
   }
 
+  input AddProductInput {
+    name: String!
+    description: String!
+    quantity: Int!
+    price: Float!
+    image: String!
+    onSale: Boolean!
+    categoryId: ID!
+  }
+
   type Product {
     id: ID!
     name: String!
