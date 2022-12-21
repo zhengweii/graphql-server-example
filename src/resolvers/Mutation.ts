@@ -59,6 +59,28 @@ const Mutation = {
     })
 
     return id
+  },
+  deleteProduct: (obj, { id }, { products, reviews }) => {
+    let index = products.findIndex((each) => each.id === id)
+    if (index !== -1) {
+      products.splice(index, 1)
+    }
+
+    // Delete associated reviews
+    index = reviews.findIndex((review) => review.productId === id)
+    while (index !== -1) {
+      reviews.splice(index, 1)
+      index = reviews.findIndex((review) => review.productId === id)
+    }
+    return id
+  },
+  deleteReview: (obj, { id }, { reviews }) => {
+    let index = reviews.findIndex((each) => each.id === id)
+    if (index !== -1) {
+      reviews.splice(index, 1)
+    }
+
+    return id
   }
 }
 

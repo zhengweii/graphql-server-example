@@ -5,6 +5,8 @@ const mutationTypeDefs = `#graphql
     addReview(input: AddReviewInput): Review!
 
     deleteCategory(id: ID!): ID!
+    deleteProduct(id: ID!): ID!
+    deleteReview(id: ID!): ID!
   }
 `
 
