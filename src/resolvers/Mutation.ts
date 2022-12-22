@@ -81,6 +81,36 @@ const Mutation = {
     }
 
     return id
+  },
+  updateCategory: (obj, { id, input }, { categories }) => {
+    const index = categories.findIndex((each) => each.id === id)
+
+    categories[index] = {
+      ...categories[index],
+      ...input
+    }
+
+    return categories[index]
+  },
+  updateProduct: (obj, { id, input }, { products }) => {
+    const index = products.findIndex((each) => each.id === id)
+
+    products[index] = {
+      ...products[index],
+      ...input
+    }
+
+    return products[index]
+  },
+  updateReview: (obj, { id, input }, { reviews }) => {
+    const index = reviews.findIndex((each) => each.id === id)
+
+    reviews[index] = {
+      ...reviews[index],
+      ...input
+    }
+
+    return reviews[index]
   }
 }
 

@@ -7,6 +7,12 @@ const reviewTypeDefs = `#graphql
     productId: ID!
   }
 
+  input UpdateReviewInput {
+    title: String
+    comment: String
+    rating: Int
+  }
+
   type Review {
     id: ID!
     date: String!

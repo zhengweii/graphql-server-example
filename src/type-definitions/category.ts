@@ -3,6 +3,10 @@ const categoryTypeDefs = `#graphql
     name: String!
   }
 
+  input UpdateCategoryInput {
+    name: String
+  }
+
   type Category {
     id: ID!
     name: String!

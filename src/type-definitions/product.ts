@@ -14,6 +14,17 @@ const productTypeDefs = `#graphql
     categoryId: ID!
   }
 
+  input UpdateProductInput {
+    name: String
+    description: String
+    quantity: Int
+    price: Float
+    image: String
+    onSale: Boolean
+    categoryId: ID
+    category: UpdateCategoryInput
+  }
+
   type Product {
     id: ID!
     name: String!
